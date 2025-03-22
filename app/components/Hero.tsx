@@ -12,83 +12,91 @@ const fadeIn = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center section-padding overflow-hidden bg-hero-gradient">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
-      </div>
+    <section id="home" className="relative min-h-[100svh] w-full">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-[10%] left-[5%] w-48 sm:w-56 md:w-64 lg:w-72 aspect-square bg-primary/10 rounded-full blur-3xl -z-10" />
+          <div className="absolute bottom-[10%] right-[5%] w-48 sm:w-56 md:w-64 lg:w-72 aspect-square bg-secondary/10 rounded-full blur-3xl -z-10" />
+        </div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative">
-        {/* Content */}
-        <motion.div 
-          className="text-center lg:text-left"
-          initial="initial"
-          animate="animate"
-          variants={fadeIn}
-        >
-          <h1 className="text-hero font-display mb-6">
-            Transform Your 
-            <span className="text-gradient"> Workflow</span>
-          </h1>
-          <p className="text-lg md:text-xl text-text-body mb-8 max-w-2xl mx-auto lg:mx-0">
-            Experience the future of productivity with our innovative SaaS solution. 
-            Streamline your processes and boost efficiency like never before.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#waitlist" className="btn-primary">
-              Join the Waitlist
-            </a>
-            <a href="#features" className="btn-secondary">
-              Learn More
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Product Preview */}
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
-            <Image
-              src="https://placehold.co/800x600/f5f3ff/a78bfa?text=Product+Preview"
-              alt="Product Interface Preview"
-              width={800}
-              height={600}
-              className="object-cover"
-              priority
-            />
-          </div>
-          
-          {/* Feature Highlights */}
-          <motion.div
-            className="absolute -right-4 top-4 bg-white rounded-lg shadow-lg p-4"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+        {/* Content Container */}
+        <div className="relative max-w-[85rem] mx-auto w-full grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+          {/* Content */}
+          <motion.div 
+            className="text-center lg:text-left space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8"
+            initial="initial"
+            animate="animate"
+            variants={fadeIn}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="text-sm font-medium">Real-time Collaboration</span>
+            <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold tracking-tight leading-[1.15]">
+              Transform Your{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">Workflow</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
+              Experience the future of productivity with our innovative SaaS solution. 
+              Streamline your processes and boost efficiency like never before.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center lg:justify-start">
+              <a 
+                href="#waitlist" 
+                className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors"
+              >
+                Join the Waitlist
+              </a>
+              <a 
+                href="#features" 
+                className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg rounded-lg bg-white text-gray-800 font-medium border border-gray-200 hover:bg-gray-50 transition-colors"
+              >
+                Learn More
+              </a>
             </div>
           </motion.div>
 
+          {/* Product Preview */}
           <motion.div
-            className="absolute -left-4 bottom-4 bg-white rounded-lg shadow-lg p-4"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            className="relative w-full max-w-xl mx-auto lg:mx-0"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-primary" />
-              <span className="text-sm font-medium">Smart Engagement</span>
+            <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl lg:shadow-2xl">
+              <Image
+                src="https://placehold.co/800x600/f5f3ff/a78bfa?text=Product+Preview"
+                alt="Product Interface Preview"
+                width={800}
+                height={600}
+                className="object-cover w-full h-full"
+                priority
+              />
             </div>
+            
+            {/* Feature Highlights */}
+            <motion.div
+              className="absolute right-0 top-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-[90%] sm:max-w-none transform translate-x-0 sm:translate-x-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500" />
+                <span className="text-xs sm:text-sm md:text-base font-medium whitespace-nowrap">Real-time Collaboration</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="absolute left-0 bottom-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-[90%] sm:max-w-none transform -translate-x-0 sm:-translate-x-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-purple-600" />
+                <span className="text-xs sm:text-sm md:text-base font-medium whitespace-nowrap">Smart Engagement</span>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
