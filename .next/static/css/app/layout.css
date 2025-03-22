@@ -1017,6 +1017,9 @@ video {
 .max-w-md {
   max-width: 28rem;
 }
+.max-w-\[70\%\] {
+  max-width: 70%;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1078,6 +1081,9 @@ video {
 }
 .flex-col {
   flex-direction: column;
+}
+.place-items-center {
+  place-items: center;
 }
 .items-start {
   align-items: flex-start;

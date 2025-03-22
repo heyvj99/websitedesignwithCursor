@@ -73,7 +73,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="text-sm font-medium">Real-time Analytics</span>
+              <span className="text-sm font-medium">Real-time Collaboration</span>
             </div>
           </motion.div>
 
@@ -85,7 +85,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-primary" />
-              <span className="text-sm font-medium">Smart Automation</span>
+              <span className="text-sm font-medium">Smart Engagement</span>
             </div>
           </motion.div>
         </motion.div>

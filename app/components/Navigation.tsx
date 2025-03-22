@@ -5,11 +5,9 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const menuItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Features', href: '#features' },
-  { name: 'Use Cases', href: '#use-cases' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'FAQ', href: '#faq' },
+  // { name: 'Home', href: '#home' },
+  { name: 'Explore Learning', href: '#explore-learning' },
+  { name: 'About Us', href: '#about-us' },
 ];
 
 export default function Navigation() {
@@ -20,10 +18,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-2xl font-display font-semibold text-gradient">
-            SaaS
+            Moraa
           </span>
         </Link>
-
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {menuItems.map((item) => (

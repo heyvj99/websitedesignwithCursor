@@ -168,7 +168,7 @@ export default function UseCases() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col justify-center items-center">
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="w-8 h-8 rounded-lg bg-[#D8BFD8]/50 flex items-center justify-center">
               <svg className="w-4 h-4 text-[#4A3A59]" fill="currentColor" viewBox="0 0 20 20">
@@ -180,8 +180,8 @@ export default function UseCases() {
               Use Cases
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-semibold text-[#4A3A59] mb-6 tracking-tight">
-            Perfect for teams across industries
+          <h2 className="max-w-[70%] text-4xl lg:text-5xl font-display font-semibold text-[#4A3A59] mb-6 tracking-tight">
+            Purpose-built for moders trainers and facilitators
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Discover how our solution adapts to various business needs and enhances workflow efficiency.
