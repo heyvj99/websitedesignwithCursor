@@ -57,107 +57,109 @@ export default function Footer() {
   return (
     <footer className="bg-secondary text-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
-      <div className="max-w-7xl mx-auto py-12 px-6 lg:px-8 lg:py-16">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          {/* Brand */}
-          <div className="space-y-8 xl:col-span-1">
-            <Link href="/" className="block">
-              <Image 
-                src="/logo.svg" 
-                alt="Moraa Logo" 
-                width={120} 
-                height={40} 
-                className="h-8 w-auto brightness-0 invert" 
-              />
-            </Link>
-            <p className="text-white/70 text-base">
-              Making the world a better place through efficient workflow solutions.
+      <div className="section-container py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto py-12 px-6 lg:px-8 lg:py-16">
+          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+            {/* Brand */}
+            <div className="space-y-8 xl:col-span-1">
+              <Link href="/" className="block">
+                <Image 
+                  src="/logo.svg" 
+                  alt="Moraa Logo" 
+                  width={120} 
+                  height={40} 
+                  className="h-8 w-auto brightness-0 invert" 
+                />
+              </Link>
+              <p className="text-white/70 text-base">
+                Making the world a better place through efficient workflow solutions.
+              </p>
+              <div className="flex space-x-6">
+                {navigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    {item.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 className="text-sm font-semibold tracking-wider uppercase">Product</h3>
+                  <ul className="mt-4 space-y-4">
+                    {navigation.product.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-12 md:mt-0">
+                  <h3 className="text-sm font-semibold tracking-wider uppercase">Company</h3>
+                  <ul className="mt-4 space-y-4">
+                    {navigation.company.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 className="text-sm font-semibold tracking-wider uppercase">Legal</h3>
+                  <ul className="mt-4 space-y-4">
+                    {navigation.legal.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-12 md:mt-0">
+                  <h3 className="text-sm font-semibold tracking-wider uppercase">Newsletter</h3>
+                  <p className="mt-4 text-base text-white/70">
+                    Get the latest updates and news directly in your inbox.
+                  </p>
+                  <form className="mt-4">
+                    <div className="flex">
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="min-w-0 flex-1 bg-white/10 border border-white/20 rounded-l-lg px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/20"
+                      />
+                      <button
+                        type="submit"
+                        className="bg-white text-primary px-4 py-2 rounded-r-lg font-medium hover:bg-white/90 transition-colors"
+                      >
+                        Subscribe
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <p className="text-base text-white/70 text-center">
+              &copy; {new Date().getFullYear()} SaaS, Inc. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-white/70 hover:text-white transition-colors"
-                >
-                  <span className="sr-only">{item.name}</span>
-                  {item.icon}
-                </a>
-              ))}
-            </div>
           </div>
-
-          {/* Navigation */}
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase">Product</h3>
-                <ul className="mt-4 space-y-4">
-                  {navigation.product.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold tracking-wider uppercase">Company</h3>
-                <ul className="mt-4 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase">Legal</h3>
-                <ul className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold tracking-wider uppercase">Newsletter</h3>
-                <p className="mt-4 text-base text-white/70">
-                  Get the latest updates and news directly in your inbox.
-                </p>
-                <form className="mt-4">
-                  <div className="flex">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="min-w-0 flex-1 bg-white/10 border border-white/20 rounded-l-lg px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/20"
-                    />
-                    <button
-                      type="submit"
-                      className="bg-white text-primary px-4 py-2 rounded-r-lg font-medium hover:bg-white/90 transition-colors"
-                    >
-                      Subscribe
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-base text-white/70 text-center">
-            &copy; {new Date().getFullYear()} SaaS, Inc. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

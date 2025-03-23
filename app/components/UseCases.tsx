@@ -76,9 +76,9 @@ export default function UseCases() {
   const MotionDiv = motion.div;
   
   return (
-    <section id="use-cases" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+    <section id="use-cases" className="relative overflow-hidden section-padding">
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="section-container relative">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 flex flex-col justify-center items-center">
           <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[#D8BFD8]/50 flex items-center justify-center">

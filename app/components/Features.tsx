@@ -136,8 +136,8 @@ function FeatureSection({ feature }: { feature: typeof features[0] }) {
   const imageOrder = feature.isReversed ? 'lg:order-1' : '';
 
   return (
-    <section id={feature.id} className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-visible">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id={feature.id} className="relative overflow-visible section-padding">
+      <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
           {/* Content */}
           <div className={`text-center lg:text-left ${contentOrder}`}>

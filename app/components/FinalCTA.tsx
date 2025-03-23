@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 
 export default function FinalCTA() {
   return (
-    <section id="waitlist" className="relative overflow-hidden">
+    <section id="waitlist" className="relative overflow-hidden section-padding">
       <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa]">
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32 relative">
+      <div className="section-container relative">
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 20 }}

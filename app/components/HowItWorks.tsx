@@ -68,8 +68,8 @@ const itemVariants = {
 
 export default function HowItWorks() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden bg-gradient-to-b from-white to-purple-50/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section className="relative overflow-hidden section-padding bg-gradient-to-b from-white to-purple-50/30">
+      <div className="section-container relative">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="flex items-center justify-center gap-2 mb-4">

@@ -13,7 +13,7 @@ const fadeIn = {
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-[100svh] w-full pt-20">
-      <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+      <div className="section-container section-padding">
         {/* Decorative Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-[10%] left-[5%] w-48 sm:w-56 md:w-64 lg:w-72 aspect-square bg-primary/10 rounded-full blur-3xl -z-10" />
