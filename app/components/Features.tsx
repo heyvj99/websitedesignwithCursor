@@ -25,10 +25,10 @@ const floatAnimation = {
 
 const features = [
   {
-    id: 'analytics',
-    label: 'REAL-TIME ANALYTICS',
-    title: 'Make informed decisions instantly',
-    description: 'Gain instant insights into your operations with dynamic dashboards and reports, empowering you to act on data the moment it matters.',
+    id: 'Interactivity',
+    label: 'INTERACTIVE LEARNING',
+    title: 'Features That Elevate Your Training Game',
+    description: 'Ditch boring lectures. Moraa makes learning hands-on, collaborative, and action-packed so participants stay engaged and actually apply what they learn.',
     cta: 'Request your demo',
     stats: {
       efficiency: '98%',
@@ -36,19 +36,19 @@ const features = [
     }
   },
   {
-    id: 'integrations',
-    label: 'SEAMLESS INTEGRATIONS',
-    title: 'Connect all your tools in one place',
-    description: 'Streamline your workflow by connecting your favorite tools. Our platform integrates seamlessly with popular services like Slack, Notion, and Salesforce.',
+    id: 'Brand',
+    label: 'BUILD YOUR BRAND',
+    title: 'Own your niche and establish yourself as a thought leader.',
+    description: 'Moraa gives trainers and facilitators the platform they need to shine, connect with learners, and grow a loyal audience.',
     cta: 'View Integrations',
     imageUrl: 'https://placehold.co/600x400/f5f3ff/a78bfa?text=Integration+Hub',
     isReversed: true,
   },
   {
-    id: 'automation',
-    label: 'SMART AUTOMATION',
-    title: 'Automate your repetitive tasks',
-    description: 'Let our AI-powered automation handle your routine tasks. Build custom workflows, set triggers, and watch your productivity soar.',
+    id: 'monetize',
+    label: 'MONETIZE & SCALE',
+    title: 'Turn your knowledge into a thriving business.',
+    description: 'Moraa helps you sell, scale, and grow without the burnout—because your expertise is worth it.',
     cta: 'Discover Automation',
     imageUrl: 'https://placehold.co/600x400/f5f3ff/a78bfa?text=Automation+Flow',
     isReversed: false,
@@ -153,7 +153,7 @@ function FeatureSection({ feature }: { feature: typeof features[0] }) {
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-[#4A2B5F] mb-4 sm:mb-6 tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-[#432557] mb-4 sm:mb-6 leading-[1.2] tracking-[-.01em]">
               {feature.title}
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl mx-auto lg:mx-0 leading-relaxed">

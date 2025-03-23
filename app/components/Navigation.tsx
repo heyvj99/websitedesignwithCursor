@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const menuItems = [
   // { name: 'Home', href: '#home' },
@@ -17,9 +18,7 @@ export default function Navigation() {
     <nav className="fixed w-full bg-white/80 backdrop-blur-sm z-50 py-4 px-6 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-display font-semibold text-gradient">
-            Moraa
-          </span>
+          <Image src="/logo.svg" alt="Moraa Logo" width={120} height={40} className="h-8 w-auto" />
         </Link>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">

@@ -12,7 +12,7 @@ const fadeIn = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[100svh] w-full">
+    <section id="home" className="relative min-h-[100svh] w-full pt-20">
       <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
         {/* Decorative Elements */}
         <div className="absolute inset-0">
@@ -30,12 +30,11 @@ export default function Hero() {
             variants={fadeIn}
           >
             <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold tracking-tight leading-[1.15]">
-              Transform Your{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">Workflow</span>
+              Make Learning{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">Interactive</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
-              Experience the future of productivity with our innovative SaaS solution. 
-              Streamline your processes and boost efficiency like never before.
+            Moraa is the ultimate platform for trainers, facilitators, and knowledge creators who want to go beyond static content and design immersive, action-packed learning experiences. 
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center lg:justify-start">
               <a 
@@ -73,7 +72,7 @@ export default function Hero() {
             
             {/* Feature Highlights */}
             <motion.div
-              className="absolute right-0 top-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-[90%] sm:max-w-none transform translate-x-0 sm:translate-x-4"
+              className="absolute -right-[20px] top-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-[90%] sm:max-w-none transform translate-x-0 sm:translate-x-4"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -85,7 +84,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              className="absolute left-0 bottom-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-[90%] sm:max-w-none transform -translate-x-0 sm:-translate-x-4"
+              className="absolute -left-20 bottom-4 bg-white rounded-lg shadow-lg p-3 sm:p-4 max-w-[90%] sm:max-w-none transform -translate-x-0 sm:-translate-x-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}

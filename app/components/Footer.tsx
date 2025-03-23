@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navigation = {
   product: [
@@ -60,8 +61,14 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           {/* Brand */}
           <div className="space-y-8 xl:col-span-1">
-            <Link href="/" className="text-2xl font-display font-semibold">
-              SaaS
+            <Link href="/" className="block">
+              <Image 
+                src="/logo.svg" 
+                alt="Moraa Logo" 
+                width={120} 
+                height={40} 
+                className="h-8 w-auto brightness-0 invert" 
+              />
             </Link>
             <p className="text-white/70 text-base">
               Making the world a better place through efficient workflow solutions.

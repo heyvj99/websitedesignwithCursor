@@ -2,74 +2,32 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PenTool, UsersRound, Rocket, TrendingUp, BadgeDollarSign } from 'lucide-react';
 
 const steps = [
   {
     number: '1',
-    title: 'Sign up & Profile',
-    description: 'Create your account and set up your personalized profile in minutes.',
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none">
-        <path d="M4 12L12 4L20 12L12 20L4 12Z" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 12L16 16M12 12L8 8M12 12L12 4M12 12L12 20" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <defs>
-          <linearGradient id="gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#60A5FA"/>
-            <stop offset="1" stopColor="#7C3AED"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    )
+    title: 'Design Your Learning Experience',
+    description: 'Use Moraa\'s built-in collaboration tools to make learning interactive and applied.',
+    icon: <PenTool className="w-full h-full text-purple-600" strokeWidth={1} />
   },
   {
     number: '2',
-    title: 'Personalisation',
-    description: 'Customize your experience with AI-powered recommendations and settings.',
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none">
-        <path d="M4 8h4v12H4V8zM10 4h4v16h-4V4zM16 12h4v8h-4v-8z" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <defs>
-          <linearGradient id="gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#60A5FA"/>
-            <stop offset="1" stopColor="#7C3AED"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    )
+    title: 'Host & Engage Participants',
+    description: 'Run LIVE courses, structured workshops, or self-paced learning experiences.',
+    icon: <UsersRound className="w-full h-full text-purple-600" strokeWidth={1} />
   },
   {
     number: '3',
-    title: 'Strategy',
-    description: 'Develop and implement your learning roadmap with expert guidance.',
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none">
-        <path d="M4 16l4-4 4 4 8-8" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M14 8h6v6" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <defs>
-          <linearGradient id="gradient" x1="4" y1="8" x2="20" y2="14" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#60A5FA"/>
-            <stop offset="1" stopColor="#7C3AED"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    )
+    title: 'Publish & Scale Your Reach',
+    description: 'Publish content in Moraa\'s Discovery Hub so professionals can discover and enroll in your offerings.',
+    icon: <Rocket className="w-full h-full text-purple-600" strokeWidth={1} />
   },
   {
     number: '4',
-    title: 'Analyze & Scale',
-    description: 'Track progress, measure results, and expand your impact with data-driven insights.',
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none">
-        <path d="M20 20H4V4" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M4 16.5L12 9l3 3 5-5" stroke="url(#gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <defs>
-          <linearGradient id="gradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#60A5FA"/>
-            <stop offset="1" stopColor="#7C3AED"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    )
+    title: 'Monetize & Grow Your Impact',
+    description: 'Expand your professional influence by connecting with an audience actively looking for expert-driven learning.',
+    icon: <BadgeDollarSign className="w-full h-full text-purple-600" strokeWidth={1} />
   }
 ];
 
@@ -126,16 +84,16 @@ export default function HowItWorks() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-gray-900 mb-4">
-            Your journey to success
+          Learning shouldn't feel like a chore
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Follow these four simple steps to transform your learning experience
+          With Moraa, you can create, host, and grow your learning experiences effortlessly. Here's how:
           </p>
         </div>
 
         {/* Steps Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 md:gap-8 lg:gap-10"
           variants={containerVariants}
           initial="initial"
           whileInView="whileInView"
@@ -146,7 +104,7 @@ export default function HowItWorks() {
               key={step.number}
               className="group relative bg-gradient-to-br from-white to-purple-50 rounded-2xl p-6 sm:p-8"
               style={{
-                backgroundImage: `radial-gradient(circle at center, rgba(167, 139, 250, 0.1) 0%, rgba(167, 139, 250, 0) 70%)`,
+                backgroundImage: `radial-gradient(circle at center, rgba(167, 139, 250, 0.15) 0%, rgba(167, 139, 250, 0) 70%)`,
                 backgroundSize: '200% 200%',
                 backgroundPosition: 'center'
               }}
