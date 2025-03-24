@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import WaitlistModal from './WaitlistModal';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -11,6 +12,12 @@ const fadeIn = {
 };
 
 export default function Hero() {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
+  const handleWaitlistClick = () => {
+    setIsWaitlistOpen(true);
+  };
+
   return (
     <section id="home" className="relative min-h-[100svh] w-full pt-20">
       <div className="section-container section-padding">
@@ -37,22 +44,25 @@ export default function Hero() {
             Moraa is the ultimate platform for trainers, facilitators, and knowledge creators who want to go beyond static content and design immersive, action-packed learning experiences. 
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center lg:justify-start">
-              <a 
-                href="#waitlist" 
+              <button 
+                onClick={handleWaitlistClick}
                 className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg rounded-lg bg-[#6e46d4] text-white font-medium hover:bg-[#5738a7] transition-colors"
               >
-                Join the Waitlist
-              </a>
-              <a 
-                href="#features" 
+                Join Waitlist
+              </button>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('features');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg rounded-lg bg-white text-gray-800 font-medium border border-gray-200 hover:bg-gray-50 transition-colors"
               >
                 Learn More
-              </a>
+              </button>
             </div>
           </motion.div>
 
-          {/* Product Preview */}
+          {/* Image/Illustration */}
           <motion.div
             className="relative w-full max-w-xl mx-auto lg:mx-0"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -97,6 +107,11 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <WaitlistModal 
+        isOpen={isWaitlistOpen}
+        onClose={() => setIsWaitlistOpen(false)}
+      />
     </section>
   );
 } 

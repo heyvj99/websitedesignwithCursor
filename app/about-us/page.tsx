@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import FinalCTA from '../components/FinalCTA';
 
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), {
   ssr: false
@@ -203,28 +204,7 @@ export default function Page() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary to-secondary text-white">
-        <div className="section-container section-padding">
-          <MotionDiv
-            className="max-w-3xl mx-auto text-center space-y-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold">
-              Be Part of the Future of Learning
-            </h2>
-            <div>
-              <a 
-                href="#waitlist" 
-                className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors"
-              >
-                Join the Waitlist
-              </a>
-            </div>
-          </MotionDiv>
-        </div>
-      </section>
+      <FinalCTA heading="Be Part of the Future of Learning" />
 
       <Footer />
     </main>

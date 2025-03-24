@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import FinalCTA from '../components/FinalCTA';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -173,28 +174,7 @@ export default function ExploreLearning() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary to-secondary text-white">
-        <div className="section-container section-padding text-center">
-          <motion.div
-            className="max-w-3xl mx-auto space-y-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold">
-              Ready to learn in a way that actually sticks?
-            </h2>
-            <div>
-              <a 
-                href="#waitlist" 
-                className="inline-block px-8 py-4 bg-white text-primary rounded-lg font-semibold text-lg hover:bg-white/90 transition-colors"
-              >
-                Join the Waitlist
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <FinalCTA heading="Ready to learn in a way that actually sticks?" />
 
       <Footer />
     </main>

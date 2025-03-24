@@ -1,9 +1,18 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import WaitlistModal from './WaitlistModal';
 
-export default function FinalCTA() {
+const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
+
+interface FinalCTAProps {
+  heading?: string;
+}
+
+export default function FinalCTA({ heading = "Ready to transform your workflow?" }: FinalCTAProps) {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
   return (
     <section id="waitlist" className="relative overflow-hidden section-padding">
       <div className="absolute inset-0 bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa]">
@@ -13,7 +22,7 @@ export default function FinalCTA() {
       </div>
 
       <div className="section-container relative">
-        <motion.div 
+        <MotionDiv 
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,44 +30,37 @@ export default function FinalCTA() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl lg:text-5xl font-display font-semibold text-white mb-6">
-            Ready to transform your workflow?
+            {heading}
           </h2>
           <p className="text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto">
             Join our exclusive waitlist today. Limited spots available for early access.
           </p>
           
-          {/* Email Form */}
-          <form className="max-w-md mx-auto mb-8">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/20"
-              />
-              <button
-                type="submit"
-                className="px-8 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
-              >
-                Join Waitlist
-              </button>
-            </div>
-          </form>
+          {/* Waitlist Button */}
+          <div className="max-w-md mx-auto mb-8">
+            <button
+              onClick={() => setIsWaitlistOpen(true)}
+              className="w-full sm:w-auto px-8 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-white/90 transition-colors"
+            >
+              Join Waitlist
+            </button>
+          </div>
 
           {/* Social Proof */}
           <p className="text-white/80 text-sm">
             Join 1,000+ teams already on the waitlist
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Floating Elements */}
-        <motion.div
+        <MotionDiv
           className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         />
-        <motion.div
+        <MotionDiv
           className="absolute bottom-10 right-10 w-32 h-32 border border-white/20 rounded-full"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -66,6 +68,8 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.4 }}
         />
       </div>
+
+      <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
     </section>
   );
 } 
