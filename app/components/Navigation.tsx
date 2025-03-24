@@ -4,15 +4,17 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const menuItems = [
   // { name: 'Home', href: '#home' },
-  { name: 'Explore Learning', href: '#explore-learning' },
-  { name: 'About Us', href: '#about-us' },
+  { name: 'Explore Learning', href: '/explore-learning' },
+  { name: 'About Us', href: '/about-us' },
 ];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-sm z-50 py-4">
@@ -27,7 +29,11 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-text-body hover:text-primary transition-colors"
+                className={`transition-colors ${
+                  pathname === item.href 
+                    ? 'text-purple-600 font-medium' 
+                    : 'text-text-body hover:text-primary'
+                }`}
               >
                 {item.name}
               </Link>
@@ -63,7 +69,11 @@ export default function Navigation() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-text-body hover:text-primary transition-colors"
+                    className={`transition-colors ${
+                      pathname === item.href 
+                        ? 'text-purple-600 font-medium' 
+                        : 'text-text-body hover:text-primary'
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}

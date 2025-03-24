@@ -39,7 +39,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center lg:justify-start">
               <a 
                 href="#waitlist" 
-                className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors"
+                className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg rounded-lg bg-[#6e46d4] text-white font-medium hover:bg-[#5738a7] transition-colors"
               >
                 Join the Waitlist
               </a>
